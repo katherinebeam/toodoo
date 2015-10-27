@@ -4,6 +4,8 @@ function ready() {
   $('#new_task').on('ajax:success', newTask);
 
   function newTask(event, data) {
-    $('body').append(data);
+    $('#tasks').append(data);
+    $('#task_name').val('');
+    $(document).on("ready page:load", ready);
   }
 }
